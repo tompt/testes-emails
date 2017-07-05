@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="UTF-8">
+	</head>
+<body>
+<p>Clique no botão para ver a mensagem. Tem 10 segundos.</p>
+
+<button onclick="openWin()">Ver Mensagem</button>
+
+<script>
+function openWin() {
+    var myWindow = window.open("processar.php", "myWindow", "width=6000, height=6000");
+    setTimeout(function(){ myWindow.close() }, 8000);
+}
+
+</script>
+<!--myWindow.document.write("<p>This is 'myWindow'</p>");-->
+</body>
+</html>
