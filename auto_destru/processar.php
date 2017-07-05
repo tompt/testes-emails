@@ -39,8 +39,8 @@ and open the template in the editor.
                 <form action="index.php" method="get">
                     <input type="text" placeholder="Nome que deve aparecer como pessoa que envia" name="nome" value="<?php echo $nome;?>" disabled="disabled"/>  
                     <input type="text" placeholder="Assunto" name="assunto" value="<?php echo $assunto;?>" disabled="disabled"/>
-                    <textarea cols="50" placeholder="Mensagem..." name="mensagem" disabled="disabled" style="height: 321px"><?php echo $mensagem;?></textarea>
-                    <input type="submit" value="Enviar" name="send"/>
+                    <textarea cols="50" placeholder="Mensagem..." name="mensagem" disabled="disabled" style="height: 321px"><?php echo $mensagem;?></textarea>&nbsp;
+                	<p id="demo">Mensagem expira em </p>
                 </form>    
             </div>
         </div>
@@ -98,7 +98,7 @@ and open the template in the editor.
 
 <script>
 // Set the date we're counting down to
-var countDownDate = new Date("Jul 5, 2017 20:00:00").getTime();
+var countDownDate = new Date("Jul 6, 2017 20:00:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -116,13 +116,13 @@ var x = setInterval(function() {
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
     // Output the result in an element with id="demo"
-    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-    + minutes + "m " + seconds + "s ";
+    document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
     
     // If the count down is over, write some text 
     if (distance < 0) {
         clearInterval(x);
-        document.getElementById("demo").innerHTML = "EXPIRED";
+        document.getElementById("demo").innerHTML = "EXPIRADO em "+ days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
     }
 }, 1000);
 </script>
