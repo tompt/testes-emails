@@ -11,7 +11,7 @@ and open the template in the editor.
         <link href="style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-                <?php 
+             <?php 
                 if(isset($_GET['nome']))
                   {$nome= $_GET['nome']; }
                   else
@@ -24,11 +24,7 @@ and open the template in the editor.
                   {$mensagem= $_GET['mensagem']; }
                   else
                   {	$mensagem= "sem mensagem";}
-                if(isset($_GET['idmensagem']))
-                  {$idmensagem= $_GET['idmensagem']; }
-                  else
-                  {	$idmensagem= "sem idmensagem";}
-                ?>
+               ?>
 
         <div id="main">
             <h1>Mensagem auto destrutiva  em 10 segundos</p></h1>
@@ -39,7 +35,7 @@ and open the template in the editor.
                 <form action="index.php" method="get">
                     <input type="text" placeholder="Nome que deve aparecer como pessoa que envia" name="nome" value="<?php echo $nome;?>" disabled="disabled"/>  
                     <input type="text" placeholder="Assunto" name="assunto" value="<?php echo $assunto;?>" disabled="disabled"/>
-                    <textarea cols="50" placeholder="Mensagem..." name="mensagem" disabled="disabled" style="height: 321px"><?php echo $mensagem;?></textarea>&nbsp;
+                    <textarea cols="50" placeholder="Mensagem..." name="mensagem" disabled="disabled" style="height: 321px">Quem enviou:<?php echo $nome;?><br/>Mensagem:<br/><?php echo $mensagem;?></textarea>&nbsp;
                 	<p id="demo">Mensagem expira em </p>
                 </form>    
             </div>
@@ -50,7 +46,7 @@ and open the template in the editor.
                   {
                     $email = $_POST['email'];                    
                     $nome = $_POST['nome'];
-                    $message = $_POST['message'];
+                    $mensagem= $_POST['mensagem'];
                     $subject = $_POST['subject'];
                     $mail->Username = $email;
                     $mail->Password = $password;

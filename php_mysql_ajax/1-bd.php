@@ -1,10 +1,4 @@
-﻿<?php
-//$servername = "localhost";
-//$username = "root";
-//$password = "";
-//$dbname = "tese";
-?>
-
+﻿
 <?php
 require 'dados.php';
 
