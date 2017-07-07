@@ -24,6 +24,11 @@ and open the template in the editor.
                   {$mensagem= $_GET['mensagem']; }
                   else
                   {	$mensagem= "sem mensagem";}
+                if(isset($_GET['idmensagem']))
+                  {$idmensagem= $_GET['idmensagem']; }
+                  else
+                  {	$idmensagem= "sem id de mensagem - nao existe essa mensagem";}
+ 
                ?>
 
         <div id="main">
@@ -35,40 +40,11 @@ and open the template in the editor.
                 <form action="index.php" method="get">
                     <input type="text" placeholder="Nome que deve aparecer como pessoa que envia" name="nome" value="<?php echo $nome;?>" disabled="disabled"/>  
                     <input type="text" placeholder="Assunto" name="assunto" value="<?php echo $assunto;?>" disabled="disabled"/>
-                    <textarea cols="50" placeholder="Mensagem..." name="mensagem" disabled="disabled" style="height: 321px">Quem enviou:<?php echo $nome;?><br/>Mensagem:<br/><?php echo $mensagem;?></textarea>&nbsp;
+                    <textarea cols="50" placeholder="Mensagem..." name="mensagem" disabled="disabled" style="height: 321px">Quem enviou: <?php echo $nome;?>&#13;&#10;Assunto: <?php echo $assunto;?>&#13;&#10;Mensagem: &#13;&#10;<?php echo $mensagem;?></textarea>&nbsp;
                 	<p id="demo">Mensagem expira em </p>
                 </form>    
             </div>
         </div>
-          <?php
-        
-              if(isset($_POST['send']))
-                  {
-                    $email = $_POST['email'];                    
-                    $nome = $_POST['nome'];
-                    $mensagem= $_POST['mensagem'];
-                    $subject = $_POST['subject'];
-                    $mail->Username = $email;
-                    $mail->Password = $password;
-                    $mail->setFrom = $nome;
-                    $mail->addReplyTo = $email;
-                    #('replyto@example.com', 'First Last');
-
-                    $mail->addAddress($to_id);
-                    $mail->nome = $_POST['nome'];
-                    $mail->Subject = $subject;
-                    $mail->msgHTML($message);
-
-                    if (!$mail->send()) {
-                       $error = "Ocorreu um erro: " . $mail->ErrorInfo;
-                        ?><script>alert('<?php echo $error ?>');</script><?php
-                    } 
-                    else {
-                       echo '<script>alert("Mensagem enviada!");</script>';
-                    }
-               }
-        ?>
-
 
 <script type="application/javascript">
 	var today = new Date();
