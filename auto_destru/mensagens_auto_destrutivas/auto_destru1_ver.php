@@ -7,7 +7,7 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Mensagem unica...</title>
+        <title>Envio de mensagens auto-destrutivas</title>
         <link href="style.css" rel="stylesheet" type="text/css"/>
     	</head>
     <body>
@@ -23,7 +23,7 @@ and open the template in the editor.
 		{
 		    die("Connection failed: " . $conn->connect_error);
 		}
-		$id=$_GET['id'];
+		$id=$_POST['id'];
 		$sql = "SELECT * FROM mensagens WHERE idmensagem LIKE '$id' and visto='0'";
 		$result = $conn->query($sql);
 
@@ -41,9 +41,9 @@ and open the template in the editor.
 			} else {
 			    $msgmysql = "Não há mensagens.";
 			    $idmensagem="";
-			    $nome= "não existe";
-			    $mensagem= "não existe";
-			    $assunto= "não existe";
+			    $nome= "";
+			    $mensagem= "";
+			    $assunto= "";
 			}
 
 			// sql to update a record			
@@ -70,17 +70,17 @@ and open the template in the editor.
                   else
                   {	$mensagem= "sem mensagem";}
               */
-                if(isset($_GET['id']))
-                  {$idmensagem= $_GET['id']; }
+                if(isset($_POST['id']))
+                  {$idmensagem= $_POST['id']; }
                   else
-                  {	$idmensagem= "sem id de mensagem - nao existe essa mensagem";}
+                  {	$idmensagem= "Não existe essa mensagem";}
  
                ?>
 
         <div id="main">
-            <h1>Mensagem destruída</p></h1>
+            <h1>Mensagem única</h1>
             <div id="login">
-                <h2>Mensagem <?php echo $idmensagem;?></h2>
+                <h2><?php echo $idmensagem;?></h2>
                 <hr/>
                                     
                 <form action="index.php" method="get">

@@ -53,9 +53,9 @@ if (!mysqli_query($con,$sql)) {
 	}
 	else
 	{
-	echo "Adicionado registo!";
-	echo "<br/><a href='auto_destru1_ver.php?id=$idmensagem'>Ver mensagem. ATENÇÃO: se a vir, a mensagem é apagada!!!!</a>";
-	echo "<br/>Se quiser enviar a mensagem, copie e mande este link: localhost://auto_destru1_ver.php?id=$idmensagem"; 
+	//echo "Adicionado registo!";
+	//echo "<br/><a href='auto_destru1_ver.php?id=$idmensagem'>Ver mensagem. ATENÇÃO: se a vir, a mensagem é apagada!!!!</a>";
+	echo "<br/>Copie e mande este código a quem quer que veja a sua mensagem: <br/> <h1>$idmensagem</h1>"; 
 	}
 	
 mysqli_close($con);
