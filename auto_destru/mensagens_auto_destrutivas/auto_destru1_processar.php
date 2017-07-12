@@ -1,8 +1,16 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta content="pt" http-equiv="Content-Language" />
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	<meta content="pt" http-equiv="Content-Language" />
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    	<style type="text/css">
+		.alinharcentro {
+			text-align: center;
+		}
+		</style>
+</head>
+<body>	
+<div class="alinharcentro">
 	
 <?php
 //require 'dados_autodestru.php';
@@ -60,3 +68,8 @@ if (!mysqli_query($con,$sql)) {
 	
 mysqli_close($con);
 ?> 
+
+		<br/><a href="index.php">Regressar </a><br/>
+</div>
+</body>
+

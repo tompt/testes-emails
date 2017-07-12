@@ -10,11 +10,14 @@
 		.auto-style1 {
 			font-size: small;
 		}
+		.auto-style2 {
+			text-align: center;
+		}
 		</style>
     </head>
     <body>
         <div id="main">
-            <h1>Mensagem única</h1>
+            <h1>Mensagem Única</h1>
             <div id="login">
 					<?php
 						$digits_needed=22;
@@ -26,9 +29,10 @@
 						    $random_number .= $random_digit;
 						    $count++;
 						}
-					echo "<h2>Mensagem $random_number </h2>";
 					?>
-                
+        	<div class="auto-style2">
+				<br/>Mensagem: <?php echo "$random_number";?>
+			</div>
                 <hr/>
                 <form action="auto_destru1_processar.php" method="POST">
                     <span class="auto-style1">Como funciona: Coloque uma mensagem e clique guardar. Nome e assunto são opcionais. Guarde o código que depois é fornecido e dê-o a quem quer que veja a sua mensagem.</span>
@@ -39,6 +43,9 @@
                     <input type="submit" value="Guardar" name="send"/>
                 </form>    
             </div>
-        </div>        
+        </div>
+        <div class="auto-style2">
+        <a href="index.php">Regressar </a>        
+    	</div>
     </body>
 </html>

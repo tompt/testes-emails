@@ -16,21 +16,19 @@
     <body>
         <div id="main">
             <h1>Mensagem Única</h1>
-            <div id="login">
-					               
+            <div id="login">					               
                 <form action="auto_destru1_ver.php" method="POST">
                 	<br/>&nbsp;
-                    Escolha a opção pretendida&nbsp;&nbsp;
+                    Escolha a opção pretendida<br/> <br/>
                     <div id="images">
-					    <a href="mailto:olympiahaacht@hotmail.com">
-					    	<img class="fblogo" alt="" height="243" src="icons/escrever.PNG" width="272"></a>
+					    <a href="auto_destru1_ver.php">
+					    	<img class="fblogo" alt="Ver mensagem" height="243" src="icons/ver.PNG" width="272"></a>
+
+					    <a href="auto_destru1_criar.php">
+					    	<img class="fblogo" alt="Criar mensagem" height="243" src="icons/escrever.PNG" width="272"></a>
 					    	
-					    <a href="auto_destru1_ver.php" target="_blank">
-					    	<img class="fblogo" alt="" height="243" src="icons/ver.PNG" width="272"></a>
+					    <br/> <br/>
 					</div>
-					<br/>Se pretende ver uma mensagem recebida:&nbsp;&nbsp;
-                    <input type="text" placeholder="Insira aqui o código da mensagem" name="id"/><br>
-					<br>&nbsp;<input type="submit" value="Ver mensagem" name="send"/>
                 </form>    
             </div>
         </div>        
