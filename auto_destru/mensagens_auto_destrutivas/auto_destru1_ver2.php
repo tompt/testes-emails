@@ -85,7 +85,7 @@ and open the template in the editor.
         <div id="main">
             <h1>Mensagem Única</h1>
             <div id="login">
-                <h2><?php echo $idmensagem;?></h2>
+                <span class="auto-style1"><h3><?php echo $idmensagem;?></h3></span>
                 <hr/>
                                     
                 <form action="index.php" method="get">
