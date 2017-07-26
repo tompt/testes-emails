@@ -6,7 +6,8 @@ conn = MySQLdb.connect(user='', passwd='', db='', host='localhost')
 cursor = conn.cursor()
 
 def query(COMANDO):
-        cursor.execute("SELECT * FROM `operacoes` WHERE `operacoes_id` = 106 AND `operacoes_idutilizador` = 26")
+        #cursor.execute("SELECT * FROM `operacoes` WHERE `operacoes_id` = 106 AND `operacoes_idutilizador` = 26")
+        cursor.execute(COMANDO)
         rows = cursor.fetchall()
         for row in rows:
                 print(row)
@@ -35,6 +36,13 @@ def OPERACOES():
 """ COMECA AQUI """
 OPERACOES
 
-COMANDO="SELECT * FROM `operacoes` WHERE `operacoes_id` = 106 AND `operacoes_idutilizador` = 26"
-print ("Operacoes com id 106 e utilizador 26")
+#COMANDO="SELECT * FROM `operacoes` WHERE `operacoes_id` = 106 AND `operacoes_idutilizador` = 26"
+#print ("\n\nOperacoes com id 106 e utilizador 26")
+#query(COMANDO)
+
+COMANDO="SELECT * FROM operacoes WHERE operacoes_feito = 0 ORDER BY operacoes_data ASC LIMIT 1"
+print ("\n\n1a operacao a ser feita:")
 query(COMANDO)
+
+cursor.close()
+conn.close()
