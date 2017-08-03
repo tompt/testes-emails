@@ -8,7 +8,7 @@
         <link href="style.css" rel="stylesheet" type="text/css"/>
     	<style type="text/css">
 		.auto-style1 {
-			font-size: small;
+			font-size: medium;
 		}
 		.auto-style2 {
 			text-align: center;
@@ -34,7 +34,7 @@
 				<br/>Mensagem: <?php echo "$random_number";?>
 			</div>
                 <hr/>
-                <form action="auto_destru1_processar.php" method="POST">
+                <form action="auto_destru2_processar.php" method="POST">
                     <span class="auto-style1">Como funciona: Coloque uma mensagem e clique guardar. Nome e assunto são opcionais. Guarde o código que depois é fornecido e dê-o a quem quer que veja a sua mensagem.</span>
                     <input type="text" placeholder="Opcional: nome que deve aparecer como pessoa que envia" name="emissor" value=""/>  
                     <input type="text" placeholder="Opcional: assunto" name="assunto" value=""/>

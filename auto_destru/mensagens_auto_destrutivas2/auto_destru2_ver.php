@@ -25,7 +25,7 @@ and open the template in the editor.
             <div class="auto-style1">
             <div id="login">
 					               
-                <form action="auto_destru1_ver2.php" method="POST">
+                <form action="auto_destru2_ver2.php" method="POST">
                 	<br/>&nbsp;
                     Insira o código que lhe foi fornecido e que identifica a mensagem:&nbsp;
                     <input type="text" placeholder="Insira aqui o código da mensagem" name="id"/>&nbsp;&nbsp;
@@ -33,7 +33,7 @@ and open the template in the editor.
                     <input type="submit" value="Ver mensagem" name="send"/>
                 </form>    
             </div>
-                    <a href="index.php">Regressar</a>
+                    <a href="index2.php">Regressar</a>
         </div>
         </div>        
     </body>

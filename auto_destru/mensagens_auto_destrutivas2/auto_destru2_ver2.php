@@ -17,9 +17,11 @@ and open the template in the editor.
     	</head>
     <body>
     <?php
+    //temporizador de 5 segundos
+    header("refresh:30;url=index2.php");
     	
 		//require 'dados_autodestru.php';
-		 $servername = "localhost";$username = "root";$password = "";$dbname = "autodestru";
+		 $servername = "localhost";$username = "root";$password = "";$dbname = "tese";
 		 
 		// Create connection
 		$conn = new mysqli($servername, $username, $password, $dbname);
@@ -42,6 +44,7 @@ and open the template in the editor.
 		        $nome		=	$row["emissor"];
 		        $mensagem	=	$row["mensagem"];
 		        $assunto	=	$row["assunto"];
+		        $expira		= 	$row["expira"];
 		    }
 			} else {
 			    $msgmysql = "Não há mensagens.";
@@ -49,6 +52,7 @@ and open the template in the editor.
 			    $nome= "";
 			    $mensagem= "";
 			    $assunto= "";
+			    $expira	= "";
 			}
 
 			// sql to update a record			
@@ -84,6 +88,7 @@ and open the template in the editor.
 
         <div id="main">
             <h1>Mensagem Única</h1>
+            <h5><center>(Esta página e mensagem apagam-se em 30 segundos)</center></h5>
             <div id="login">
                 <span class="auto-style1"><h3><?php echo $idmensagem;?></h3></span>
                 <hr/>
@@ -92,7 +97,8 @@ and open the template in the editor.
                     <input type="text" name="nome" value="<?php echo $nome;?>" disabled="disabled"/>  
                     <input type="text" name="assunto" value="<?php echo $assunto;?>" disabled="disabled"/>
                     <textarea cols="50" name="mensagem" style="height: 321px">Quem enviou: <?php echo $nome;?>&#13;&#10;Assunto: <?php echo $assunto;?>&#13;&#10;Mensagem: &#13;&#10;<?php echo $mensagem;?></textarea>
-                	<p id="demo">Mensagem expira em </p>
+                	<p id="demo">Mensagem expira em <?php echo $expira;?></p>
+                	Time out: header( "refresh:5;url=wherever.php" );
                 </form>    
 
 				<script type="application/javascript">
@@ -121,9 +127,8 @@ and open the template in the editor.
         </div>
 
 	<div class="auto-style1">
-		<br/><a href="index.php">Regressar </a><br/>
+		<br/><a href="index2.php">Regressar </a><br/>
 	</div>
-
 
 <script>
 // Set the date we're counting down to
@@ -150,7 +155,8 @@ var x = setInterval(function() {
     // If the count down is over, write some text 
     if (distance < 0) {
         clearInterval(x);
-        document.getElementById("demo").innerHTML = "EXPIRADO em "+ days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+        //document.getElementById("demo").innerHTML = "EXPIRADO em "+ days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+		document.getElementById("demo").innerHTML = "EXPIRADO em " <?php echo $expira;?>;
 
     }
 }, 1000);

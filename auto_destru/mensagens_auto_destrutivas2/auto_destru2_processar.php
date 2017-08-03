@@ -17,7 +17,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "autodestru";
+$dbname = "tese";
 
        if(isset($_POST['emissor']))
        {$emissor= $_POST['emissor']; }
@@ -53,8 +53,16 @@ $emissor= mysqli_real_escape_string($con, $_POST['emissor']);
 $assunto= mysqli_real_escape_string($con, $_POST['assunto']);
 $mensagem= mysqli_real_escape_string($con, $_POST['mensagem']);
 
-$sql="INSERT INTO mensagens (idmensagem, emissor, mensagem,assunto, data)
-VALUES ('$idmensagem', '$emissor', '$mensagem','$assunto',NOW())";
+//ORIGINAL E A FUNCIONAR:
+//$sql="INSERT INTO mensagens (idmensagem, emissor, mensagem,assunto, data)
+//VALUES ('$idmensagem', '$emissor', '$mensagem','$assunto',NOW())";
+
+$sql= "INSERT INTO mensagens (idmensagem, emissor, mensagem, assunto, data, expira) 
+VALUES ('$idmensagem', '$emissor', '$mensagem','$assunto',now(), DATE_ADD(now(), INTERVAL 5 MINUTE))";
+
+
+//VALUES ('$idmensagem', '$emissor', '$mensagem','$assunto',NOW())";
+
 
 if (!mysqli_query($con,$sql)) {
   die('Error: ' . mysqli_error($con));
@@ -69,7 +77,7 @@ if (!mysqli_query($con,$sql)) {
 mysqli_close($con);
 ?> 
 
-		<br/><a href="index.php">Regressar </a><br/>
+		<br/><a href="index2.php">Regressar </a><br/>
 </div>
 </body>
 

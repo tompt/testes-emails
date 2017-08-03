@@ -21,16 +21,30 @@
                 	<br/>&nbsp;
                     Escolha a opção pretendida<br/> <br/>
                     <div id="images">
-					    <a href="auto_destru1_ver.php">
+					    <a href="auto_destru2_ver.php">
 					    	<img class="fblogo" alt="Ver mensagem" height="243" src="icons/ver.PNG" width="272"></a>
 
-					    <a href="auto_destru1_criar.php">
+					    <a href="auto_destru2_criar.php">
 					    	<img class="fblogo" alt="Criar mensagem" height="243" src="icons/escrever.PNG" width="272"></a>
 					    	
-					    <br/> <br/>
+					    	
+						<?php
+							#$starttime = time(); // PHP's date values are simply "seconds since jan 1/19170"
+							#$target = $now + (5 * 60);
+							#echo "starttime:" . $startime;
+							#echo "target:" . $target;
+							
+							#$query = "SELECT target, starttime FROM countdowntimer";
+							#$result = mysql_query($query) or die(mysql_error());
+							#$row = mysql_fetch_assoc($result);
+							#$target = $result['target'];
+							#$starttime = $result['target'];
+						?>
+					    <br/> <br/><br/>
 					</div>
                 </form>    
             </div>
-        </div>        
+        </div>  
+        <center><a href="https://iknow.suroot.com/login.php">Regressar a IKNOW</a></center>      
     </body>
 </html>
